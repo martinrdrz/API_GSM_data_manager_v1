@@ -6,6 +6,8 @@
     "payload":"0xC0560D72DA4AB2445A"
 }
 */
+let nro_mensaje = 0;
+
 const verificarMensaje = (mensaje) => {
     if (!mensaje.id) {
         throw new Error("Falta campo ID del mensaje.");
@@ -25,6 +27,12 @@ const verificarMensaje = (mensaje) => {
     return true;
 };
 
+const visualizarDatosMensaje = (mensaje) => {
+    nro_mensaje++;
+    console.log(`Mensaje ${nro_mensaje} recibido:`);
+    console.log(mensaje);
+};
+
 //Lee los datos de Firebase para saber como analizar cada uno de los mensajes que vienen en la trama de entrada, se arma un objeto con la informacion necesaria para saber donde almacenar dicha informacion y los datos propieamente dichos y se devuelve.
 
 const procesarTrama = (mensaje) => [
@@ -39,4 +47,4 @@ const almacenarDatos = (datos) => [
     //TO DO
 ];
 
-module.exports = { verificarMensaje, procesarTrama, almacenarDatos };
+module.exports = { verificarMensaje, visualizarDatosMensaje, procesarTrama, almacenarDatos };
