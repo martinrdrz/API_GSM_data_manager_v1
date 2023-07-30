@@ -13,10 +13,6 @@ const verificarMensaje = (mensaje) => {
         throw new Error("Falta campo ID del mensaje.");
     }
 
-    if (!mensaje.unixTime) {
-        throw new Error("Falta campo unixTime del mensaje.");
-    }
-
     if (!mensaje.payload_length) {
         throw new Error("Falta campo longitud del mensaje.");
     }
